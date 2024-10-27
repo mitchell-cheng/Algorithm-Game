@@ -1,5 +1,6 @@
-function PauseMenu({ onResume, onMainMenu, onExit, onReplay }) {
+import { Link } from "react-router-dom";
 
+function PauseMenu({ onResume, onMainMenu, onExit, onReplay }) {
   return (
     <div className="bg-white/10 p-8 rounded-xl min-w-64 border-solid border-1 border-white flex flex-col justify-center items-center gap-4 backdrop-blur shadow">
       <h2 className="text-white mt-0 mr-0 mb-1 ml-0 text-center text-3xl">
@@ -20,7 +21,11 @@ function PauseMenu({ onResume, onMainMenu, onExit, onReplay }) {
         onMouseLeave={e => {
           e.target.style.backgroundColor = '#4a5568';
           e.target.style.transform = 'translateY(0)';
-        }}>Exit to Main Menu</button>
+        }}>
+          <Link to="/">
+            Exit to Main Menu
+          </Link>
+        </button>
       <button onClick={onReplay} style={buttonStyle} onMouseEnter={e => {
           e.target.style.backgroundColor = '#2d3748';
           e.target.style.transform = 'translateY(-2px)';

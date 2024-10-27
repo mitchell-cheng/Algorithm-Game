@@ -1,11 +1,24 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from './components/App';
+import HomePage from './components/HomePage';
 import "./index.css";
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomePage />,
+  },
+  {
+    path: '/play',
+    element: <App />
+  }
+]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App className="m-0 w-full h-full overflow-hidden" />    
-  </StrictMode>,
+    <RouterProvider router={router} />
+  </StrictMode>
 );

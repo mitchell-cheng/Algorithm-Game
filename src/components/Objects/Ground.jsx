@@ -42,7 +42,7 @@ export function Ground() {
     if (!meshRef.current) return;
 
     let uvs = meshRef.current.geometry.attributes.uv.array;
-    meshRef.current.geometry.setAttribute("uv2", useMemo(() => new BufferAttribute(uvs, 2), []));
+    meshRef.current.geometry.setAttribute("uv2", new BufferAttribute(uvs, 2));
 
     let uvs2 = meshRef2.current.geometry.attributes.uv.array;
     meshRef2.current.geometry.setAttribute("uv2", new BufferAttribute(uvs2, 2));
